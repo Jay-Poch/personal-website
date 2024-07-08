@@ -1,0 +1,207 @@
+<html><head><base href="https://gfgfgsffdg.github.io/personal-website/portfolio.html" /><title>Jay Poch - Personal Website</title><style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  nav {
+    background-color: #35424a;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+  .social-links {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .social-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #35424a;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .social-links a:hover {
+    background-color: #2c3e50;
+  }
+  .project {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  #languageToggle {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+</style></head><body>
+  <header>
+    <h1>Jay Poch</h1>
+    <p>Python enjoyer & nerd</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about" class="nav-about"></a></li>
+      <li><a href="#projects" class="nav-projects"></a></li>
+      <li><a href="#contact" class="nav-contact"></a></li>
+    </ul>
+    <button id="languageToggle"></button>
+  </nav>
+
+  <div class="container">
+    <img src="https://gfgfgsffdg.github.io/personal-website/Screenshot_20240630_174908(1).png" alt="Jay Poch profile picture" class="profile-img" width="200" height="200">
+
+    <section id="about">
+      <h2 class="about-title"></h2>
+      <p class="about-text"></p>
+      <p class="skills-text"></p>
+      <p class="not-skills"></p>
+    </section>
+
+    <section id="projects">
+      <h2 class="projects-title"></h2>
+      <div class="project">
+        <h3>test</h3>
+        <p class="ecotrack-description"></p>
+        <a href="https://gfgfgsffdg.github.io/personal-website/error.html" class="view-project"></a>
+      </div>
+      <div class="project">
+        <h3>test</h3>
+        <p class="codecollab-description"></p>
+        <a href="https://gfgfgsffdg.github.io/personal-website/error.html" class="view-project"></a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="contact-title"></h2>
+      <p class="contact-text"></p>
+      <div class="social-links">
+        <a href="https://github.com/gfgfgsffdg">GitHub</a>
+        <a href="https://gfgfgsffdg.github.io/personal-website/error.html">LinkedIn</a>
+        <a href="https://gfgfgsffdg.github.io/personal-website/error.html">Twitter</a>
+        <a href="https://gfgfgsffdg.github.io/personal-website/error.html">Instagram</a>
+        <a href="https://gfgfgsffdg.github.io/personal-website/error.html">CodePen</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Jay Poch. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const languageToggle = document.getElementById('languageToggle');
+    let isGerman = true;
+
+    const translations = {
+      german: {
+        navAbout: 'Über mich',
+        navProjects: 'Projecte',
+        navContact: 'Kontakt',
+        aboutTitle: 'Über mich',
+        aboutText: 'Hi ich bin Jason P oder auch JayPoch und meine Hobbys sind Programmieren, Speedcubing(Zauberwürfel lösen) videospiele spielen und ich interessiere mich für alles was mit Software zu tun hat',
+        skillsText: 'Zu meinen Skills gehören Python, Grundlagen in Lua, kann mit Linux Terminals arbeiten kann ok english sprechen, Grundlagen in Bash.',
+        projectsTitle: 'Projecte',
+        ecotrackDescription: 'test',
+        codecollabDescription: 'test',
+        viewProject: 'Projekt ansehen',
+        contactTitle: 'Kontakt',
+        contactText: 'Ich bin immer offen für neue Möglichkeiten und Zusammenarbeit. Verbinden Sie sich mit mir in sozialen Medien oder professionellen Netzwerken!',
+        languageButton: 'Switch to English'
+      },
+      english: {
+        navAbout: 'About Me',
+        navProjects: 'Projects',
+        navContact: 'Contact',
+        aboutTitle: 'About Me',
+        aboutText: 'Hi, I\'m Jason P, also known as JayPoch, and my hobbies are programming, speedcubing (solving Rubik\'s cubes), playing video games, and I\'m interested in everything related to software.',
+        skillsText: 'My skills include Python, basics in Lua, working with Linux terminals, speaking decent English, and basics in Bash.',
+        projectsTitle: 'Projects',
+        ecotrackDescription: 'A web application that helps users track and reduce their carbon footprint. Built with React and Node.js, utilizing machine learning for personalized recommendations.',
+        codecollabDescription: 'A real-time collaborative coding platform for remote teams. Developed using WebSocket technology and Monaco Editor.',
+        viewProject: 'View Project',
+        contactTitle: 'Contact',
+        contactText: 'I\'m always open to new opportunities and collaborations. Connect with me on social media or professional networks!',
+        languageButton: 'Wechseln zu Deutsch'
+      }
+    };
+
+    function updateLanguage(lang) {
+      document.querySelector('.nav-about').textContent = translations[lang].navAbout;
+      document.querySelector('.nav-projects').textContent = translations[lang].navProjects;
+      document.querySelector('.nav-contact').textContent = translations[lang].navContact;
+      document.querySelector('.about-title').textContent = translations[lang].aboutTitle;
+      document.querySelector('.about-text').textContent = translations[lang].aboutText;
+      document.querySelector('.skills-text').textContent = translations[lang].skillsText;
+      document.querySelector('.projects-title').textContent = translations[lang].projectsTitle;
+      document.querySelector('.ecotrack-description').textContent = translations[lang].ecotrackDescription;
+      document.querySelector('.codecollab-description').textContent = translations[lang].codecollabDescription;
+      document.querySelectorAll('.view-project').forEach(el => el.textContent = translations[lang].viewProject);
+      document.querySelector('.contact-title').textContent = translations[lang].contactTitle;
+      document.querySelector('.contact-text').textContent = translations[lang].contactText;
+      languageToggle.textContent = translations[lang].languageButton;
+    }
+
+    languageToggle.addEventListener('click', () => {
+      isGerman = !isGerman;
+      updateLanguage(isGerman ? 'german' : 'english');
+    });
+
+    // Initial language setup
+    updateLanguage('german');
+  </script>
+</body></html>

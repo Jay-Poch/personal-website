@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="https://gfgfgsffdg.github.io/personal-website/the_archieve.html">
+<title>Jays Archives</title>
+<style>
+  body {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #00ff00;
+    padding: 20px;
+  }
+  h1 {
+    color: #ff00ff;
+    font-size: 36px;
+    text-shadow: 2px 2px #00ffff;
+  }
+  h2 {
+    color: #ffff00;
+    font-size: 24px;
+  }
+  a {
+    color: #00ffff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff00ff;
+    text-decoration: underline;
+  }
+  .blink {
+    animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  .neon-box {
+    border: 2px solid #ff00ff;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
+  }
+  .file-list {
+    text-align: left;
+    padding: 10px;
+    background-color: #001100;
+    border: 1px solid #00ff00;
+  }
+  .file-list li {
+    margin-bottom: 10px;
+  }
+  .file-size {
+    color: #ffff00;
+    font-weight: bold;
+  }
+</style>
+<script>
+const files = [
+  { path: "mods_and_texture.tar.gz", name: "mods_and_texture.tar.gz", description: "These are my mods and texturepacks for Hypixel SkyBlock.", type: "local" },
+  { path: "https://drive.google.com/file/d/1vNmzsHtI8WrEfwIBVxNp3i7VkShaz2fo/view", name: "wordlists.tar.gz", description: "these are some word lists i made with the sec list github and python. There are 2 files big.txt wich are all passwords from seclists in one file and wifi.txt wich trimmed it to only all 8 letters or more words", type: "external" },
+  // Add more files here in the same format
+];
+
+function generateFileList() {
+  const fileListElement = document.getElementById('file-list');
+  files.forEach(file => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    
+    if (file.type === "local") {
+      a.href = `https://gfgfgsffdg.github.io/personal-website/${file.path}`;
+    } else if (file.type === "external") {
+      a.href = file.path;
+      a.target = "_blank"; // Opens external links in a new tab
+    }
+    
+    a.textContent = file.name; // Use the specified name
+    li.appendChild(a);
+    li.innerHTML += ` - ${file.description}`;
+    fileListElement.appendChild(li);
+  });
+}
+
+window.onload = generateFileList;
+</script>
+</head>
+<body>
+  <div class="container">
+    <h1>Jays Archives</h1>
+    
+    <div class="neon-box">
+      <h2>Welcome to the Archives</h2>
+      <p>This is a list of files I found interesting or that I want to share</p>
+      <p>You will find anything from Minecraft Mods to my own funny viruses I coded :)</p>
+    </div>
+    
+    <h2 class="blink">!!! CAUTION: EXPERIMENTAL FILES !!!</h2>
+    
+    <div class="file-list">
+      <h3>Available Downloads:</h3>
+      <ul id="file-list">
+        <!-- File list will be generated here -->
+      </ul>
+    </div>
+    
+    <h2>Navigate the Mainframe</h2>
+    <p>
+      <a href="https://gfgfgsffdg.github.io/personal-website/">[ Return to Homepage ]</a> |
+      <a href="https://gfgfgsffdg.github.io/personal-website/portfolio.html">[ View Portfolio ]</a> |
+      <a href="https://gfgfgsffdg.github.io/personal-website/showroom.html">[ Show Room ]</a>
+    </p>
+    
+    <div class="neon-box">
+      <h2>Archive Updates</h2>
+      <p>07/07/24 Added wordlists.tar.gz<br>
+         07/2/24: Added mods_and_texture.tar.gz<br>
+         07/2/24: Started hosting the website </p>
+    </div>
+    
+    <p class="blink">Remember: Information wants to be free!</p>
+  </div>
+</body>
+</html>

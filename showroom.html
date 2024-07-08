@@ -1,0 +1,101 @@
+<html><head><base href="https://gfgfgsffdg.github.io/personal-website/"><title>Jays Showroom</title>
+<style>
+  body {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: "VT323", monospace;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #00ff00;
+    padding: 20px;
+  }
+  h1 {
+    color: #ff00ff;
+    font-size: 36px;
+    text-shadow: 2px 2px #00ffff;
+  }
+  h2 {
+    color: #ffff00;
+    font-size: 24px;
+  }
+  a {
+    color: #00ffff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff00ff;
+    text-decoration: underline;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .item {
+    border: 2px solid #00ff00;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to My Showroom</h1>
+    
+    <p>Here i will showcase anyting that i think is impressive or just plain awsome for example blogs videos or channels.</p>
+    
+    <div class="grid" id="showroom-items">
+      <!-- Showroom items will be inserted here -->
+    </div>
+    
+    <p style="margin-top: 30px;">
+      <a href="https://jaypoch.000webhostapp.com/">[ Back to Homepage ]</a>
+    </p>
+  </div>
+
+  <script>
+    // This array contains all the showroom items
+    // To add a new item, just add a new object to this array!
+    const showroomItems = [
+
+      {
+        title: "Websim",
+        description: "Websim is a website that uses sonnet 3.5 to generate a sort of ai internet i it also generated the template for this website",
+        link: "https://websim.ai/",
+        linkText: "try it here"
+      },
+      {
+        title: "ThePrimeTime",
+        description: "ThePrimeTime is a awsome channel every dev should know and he reacts to blogs and videos and has some good takes",
+        link: "https://www.youtube.com/@ThePrimeTimeagen/featured",
+        linkText: "His channels"
+      }
+    ];
+
+    // This function creates the HTML for each showroom item
+    function createItemHTML(item) {
+      return `
+        <div class="item">
+          <h2>${item.title}</h2>
+          <p>${item.description}</p>
+          <a href="${item.link}">[ ${item.linkText} ]</a>
+        </div>
+      `;
+    }
+
+    // This function renders all the showroom items
+    function renderShowroomItems() {
+      const showroomContainer = document.getElementById('showroom-items');
+      showroomContainer.innerHTML = showroomItems.map(createItemHTML).join('');
+    }
+
+    // Call the function to render the items when the page loads
+    renderShowroomItems();
+  </script>
+</body></html>
