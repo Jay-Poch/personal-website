@@ -42,7 +42,38 @@
     border: 2px solid #00ff00;
     padding: 10px;
   }
+
+  /* Mobile-specific styles */
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+    .container {
+      padding: 10px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .item {
+      padding: 5px;
+    }
+    a {
+      display: inline-block;
+      margin: 5px 0;
+    }
+  }
 </style>
+
 </head>
 <body>
   <div class="container">

@@ -53,8 +53,6 @@
     font-size: 10px;
     line-height: 10px;
     margin: 20px 0;
-     
-     
  }
   .neon-box {
     border: 2px solid #ff00ff;
@@ -62,18 +60,38 @@
     margin: 20px 0;
     box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
   }
+
+  /* Mobile-specific styles */
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+    .container {
+      padding: 10px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .ascii-art, .tag {
+      font-size: 8px;
+      line-height: 8px;
+    }
+    .neon-box {
+      padding: 5px;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 14px;
+    }
+    a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
 </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-00RTX5V3DW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-00RTX5V3DW');
-</script>
-<!-- End Google Analytics -->
-
 </head>
 <body>
   <div class="container">
