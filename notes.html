@@ -1,0 +1,98 @@
+<html><head><base href="https://jay-poch.github.io/personal-website/notes.html">
+<title>Jays Notes</title>
+<style>
+  body {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #00ff00;
+    padding: 20px;
+  }
+  h1 {
+    color: #ff00ff;
+    font-size: 36px;
+    text-shadow: 2px 2px #00ffff;
+  }
+  h2 {
+    color: #ffff00;
+    font-size: 24px;
+  }
+  a {
+    color: #00ffff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff00ff;
+    text-decoration: underline;
+  }
+  .blink {
+    animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  .neon-box {
+    border: 2px solid #ff00ff;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
+  }
+  .note {
+    background-color: #001100;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+  }
+  .date {
+    color: #ffff00;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Jays Notes</h1>
+    
+    <p>Welcome to my digital notepad! I dont know what im going to write here</p>
+    
+    <div class="neon-box">
+      <h2>Latest Notes</h2>
+      <div id="notesContainer"></div>
+    </div>
+    
+    <p><a href="https://jay-poch.github.io/personal-website/">[ Back to Mainframe ]</a></p>
+  </div>
+
+  <script>
+    const notes = [
+
+      { time: "8/31/2024", note: "im going to the  Back to Berlin 2024 comp:https://www.worldcubeassociation.org/competitions/BacktoBerlin2024" },
+    ];
+
+    function populateNotes() {
+      const notesContainer = document.getElementById('notesContainer');
+      notes.forEach(noteObj => {
+        const noteElement = document.createElement('div');
+        noteElement.className = 'note';
+        noteElement.innerHTML = `
+          <p class="date">${noteObj.time}</p>
+          <p>${noteObj.note}</p>
+        `;
+        notesContainer.appendChild(noteElement);
+      });
+    }
+
+    populateNotes();
+  </script>
+</body></html>
