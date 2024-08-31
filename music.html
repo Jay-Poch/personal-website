@@ -1,0 +1,245 @@
+<html><head><base href="https://80s-personal-website.websim.ai/music">
+<title>John Doe's Radical Music Showcase</title>
+<style>
+  body {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #00ff00;
+    padding: 20px;
+  }
+  h1 {
+    color: #ff00ff;
+    font-size: 36px;
+    text-shadow: 2px 2px #00ffff;
+  }
+  h2 {
+    color: #ffff00;
+    font-size: 24px;
+  }
+  a {
+    color: #00ffff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff00ff;
+    text-decoration: underline;
+  }
+  .blink {
+    animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  .neon-box {
+    border: 2px solid #ff00ff;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
+  }
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .album {
+    border: 1px solid #00ff00;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .album:hover {
+    transform: scale(1.05);
+  }
+  .album img {
+    max-width: 100%;
+    height: auto;
+  }
+  .album-title {
+    color: #ffff00;
+    margin: 10px 0 5px;
+  }
+  .album-artist {
+    color: #00ffff;
+    margin: 0;
+  }
+  .album-description {
+    color: #ff69b4;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  .genre-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .genre-list li {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #00ffff;
+    color: #000000;
+    border-radius: 15px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>John Doe's Radical Music Showcase</h1>
+    
+    <p>Welcome to my totally tubular music collection! These are the albums and tracks that keep my circuits buzzing!</p>
+    
+    <div class="neon-box">
+      <h2>My Musical Inspiration</h2>
+      <p>The 80s were a golden age of music that continues to inspire me. From synth-pop to new wave, the sounds of this era fuel my creativity and keep me coding all night long!</p>
+    </div>
+    
+    <h2>My Favorite Albums</h2>
+    <div id="album-grid" class="album-grid">
+      <!-- Albums will be dynamically inserted here -->
+    </div>
+    
+    <div class="neon-box">
+      <h2>Why I Dig This Music</h2>
+      <p>These albums are the epitome of 80s coolness. The synth beats, the epic guitar solos, and the unforgettable melodies transport me to a world of neon lights and endless summer nights. Each track is a masterpiece that showcases the evolution of music in this radical decade!</p>
+    </div>
+    
+    <h2>Genres I'm Grooving To</h2>
+    <ul id="genre-list" class="genre-list">
+      <!-- Genres will be dynamically inserted here -->
+    </ul>
+    
+    <p>Music is my passion, and these tunes are what keep me coding all night long. Got any recommendations? I'm always on the lookout for new tracks to add to my collection!</p>
+    
+    <p><a href="https://80s-personal-website.websim.ai">[ Back to Mainframe ]</a></p>
+  </div>
+
+  <script>
+    // Music collection data
+    const musicCollection = {
+      albums: [
+        {
+          title: "Thriller",
+          artist: "Michael Jackson",
+          image: "https://example.com/thriller.jpg",
+          year: 1982,
+          link: "https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ",
+          description: "Moonwalking into music history! The bassline in 'Billie Jean' is pure magic, and 'Beat It' has the most electrifying guitar solo ever. This album is a non-stop thrill ride!"
+        },
+        {
+          title: "Purple Rain",
+          artist: "Prince",
+          image: "https://example.com/purple-rain.jpg",
+          year: 1984,
+          link: "https://open.spotify.com/album/7nXJ5k4XgRj5OLg9m8V3zc",
+          description: "Prince's guitar wizardry meets synth perfection. 'When Doves Cry' blows my mind every time - who needs bass when you've got Prince? This album is a revolution in purple!"
+        },
+        {
+          title: "Like a Virgin",
+          artist: "Madonna",
+          image: "https://example.com/like-a-virgin.jpg",
+          year: 1984,
+          link: "https://open.spotify.com/album/7DZS6ksPovHfS8TD6N9BGN",
+          description: "Madonna's rebellious spirit and catchy hooks make this album unforgettable. 'Material Girl' is my coding anthem - because quality code is always in fashion!"
+        },
+        {
+          title: "Rio",
+          artist: "Duran Duran",
+          image: "https://example.com/rio.jpg",
+          year: 1982,
+          link: "https://open.spotify.com/album/2Xc3VQONzDH5tgZS4lBz1j",
+          description: "New Wave perfection! The synth work in 'Rio' transports me to a digital beach paradise. This album is my go-to for late-night coding sessions - it keeps my fingers dancing across the keyboard!"
+        }
+      ],
+      genres: ["New Wave", "Synthpop", "Hair Metal", "Pop Rock", "Hip Hop"]
+    };
+
+    // Function to render albums
+    function renderAlbums() {
+      const albumGrid = document.getElementById('album-grid');
+      albumGrid.innerHTML = '';
+      musicCollection.albums.forEach(album => {
+        const albumElement = document.createElement('div');
+        albumElement.className = 'album';
+        albumElement.innerHTML = `
+          <img src="${album.image}" alt="${album.title} album cover by ${album.artist}" width="200" height="200">
+          <h3 class="album-title">${album.title}</h3>
+          <p class="album-artist">${album.artist}</p>
+          <p>Year: ${album.year}</p>
+          <p class="album-description">${album.description}</p>
+        `;
+        albumElement.addEventListener('click', () => {
+          window.open(album.link, '_blank');
+        });
+        albumGrid.appendChild(albumElement);
+      });
+    }
+
+    // Function to render genres
+    function renderGenres() {
+      const genreList = document.getElementById('genre-list');
+      genreList.innerHTML = '';
+      musicCollection.genres.forEach(genre => {
+        const li = document.createElement('li');
+        li.textContent = genre;
+        genreList.appendChild(li);
+      });
+    }
+
+    // Render the initial content
+    renderAlbums();
+    renderGenres();
+
+    // Example of how to add a new album (for site maintainer)
+    function addNewAlbum(title, artist, image, year, link, description) {
+      musicCollection.albums.push({ title, artist, image, year, link, description });
+      renderAlbums();
+    }
+
+    // Example of how to remove an album (for site maintainer)
+    function removeAlbum(title) {
+      musicCollection.albums = musicCollection.albums.filter(album => album.title !== title);
+      renderAlbums();
+    }
+
+    // Example of how to add a new genre (for site maintainer)
+    function addNewGenre(genre) {
+      if (!musicCollection.genres.includes(genre)) {
+        musicCollection.genres.push(genre);
+        renderGenres();
+      }
+    }
+
+    // Example of how to remove a genre (for site maintainer)
+    function removeGenre(genre) {
+      musicCollection.genres = musicCollection.genres.filter(g => g !== genre);
+      renderGenres();
+    }
+
+    // Example of how to update an album's description (for site maintainer)
+    function updateAlbumDescription(title, newDescription) {
+      const album = musicCollection.albums.find(a => a.title === title);
+      if (album) {
+        album.description = newDescription;
+        renderAlbums();
+      }
+    }
+
+    // Examples of usage (commented out, for site maintainer reference):
+    // addNewAlbum("Bad", "Michael Jackson", "https://example.com/bad.jpg", 1987, "https://open.spotify.com/album/3Us57CjssWnHjTUIXBuIeH", "The follow-up to Thriller that's equally mind-blowing! 'Smooth Criminal' has the slickest bassline in history, and I can't help but shout 'Shamone!' every time I debug successfully.");
+    // removeAlbum("Rio");
+    // addNewGenre("Disco");
+    // removeGenre("Hair Metal");
+    // updateAlbumDescription("Thriller", "Updated description here!");
+  </script>
+</body></html>
